@@ -1,7 +1,11 @@
-import '../styles/globals.css'
+import Maintenance from "../src/components/screens/Maintenance";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  if (process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "1") {
+    return <Maintenance />;
+  } else {
+    return <Component {...pageProps} />;
+  }
 }
-
-export default MyApp
+export default MyApp;
