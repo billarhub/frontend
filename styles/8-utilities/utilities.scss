@@ -1,0 +1,84 @@
+
+@import './sizes';
+@import './align';
+
+.u-opacity-middle {
+    opacity: 0.5 !important;
+}
+.u-fs-xl {
+    font-size: to-rem(18) !important;
+}
+.u-fs-xxxl {
+    font-size: to-rem(25) !important;
+}
+//TODO: do mapping. Convert to sizes (xs,xl,etc. when defined)
+.u-fs-16 {
+    font-size: to-rem(16) !important;
+    &-s {
+        @include media-querie('mobile') {
+            font-size: to-rem(16) !important;
+        }
+    }
+}
+.u-fs-14 {
+    font-size: to-rem(14) !important;
+    &-s {
+        @include media-querie('mobile') {
+            font-size: to-rem(14) !important;
+        }
+    }
+}
+
+.u-ta-center {
+    text-align: center !important;
+    &-m {
+        @include media-querie('tablet') {
+            text-align: center !important;
+        }
+    }
+}
+.u-mt-m {
+    margin-top: 20px !important;
+}
+.u-mb-m {
+    margin-bottom: 20px !important;
+}
+//TODO: Find a neat way to do this (values, desktop/mobile, etc. as suffix)
+.u-pv-50-desktop {
+    @media (min-width: 960px) {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+}
+
+.u-mxw-80-desktop {
+    @media (min-width: 960px) {
+        max-width: 80% !important;
+    }
+}
+.u-flex-columns {
+    display: flex;
+    gap: 50px;
+    p {
+        width: 100%;
+    }
+    > * {
+        flex-basis: 100%;
+        font-size: 14px;
+        text-align: left;
+        margin: 15px;
+        .image {
+            margin-bottom: 40px;
+        }
+    }
+    @include media-querie('tablet') {
+        gap: 0;
+        flex-direction: column;
+        > * {
+            max-width: 85%;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding-bottom: 30px;
+        }
+    }
+}

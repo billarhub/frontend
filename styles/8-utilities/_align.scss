@@ -1,0 +1,19 @@
+.u-align-left{
+    text-align: left!important;
+}
+.u-align-left-desktop{
+    @include media-querie('desktop'){
+        text-align: left!important;
+    }
+}
+.u-align-center{
+    text-align: center!important;
+}
+.u-align-center-mobile{
+    text-align: center!important;
+}
+.u-align-center-desktop{
+    @include media-querie('desktop'){
+        text-align: center!important;
+    }
+}

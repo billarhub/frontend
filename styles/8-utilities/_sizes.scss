@@ -1,0 +1,39 @@
+.u-fs-10{
+    font-size: to-rem(10);
+}
+.u-fs-12{
+    font-size: to-rem(12);
+}
+.u-fs-14{
+    font-size: to-rem(14);
+}
+.u-fs-16{
+    font-size: to-rem(16);
+}
+.u-fs-18{
+    font-size: to-rem(18);
+}
+.u-fs-18-desktop{
+    @include media-querie('desktop'){
+        font-size: to-rem(18)!important;
+    }
+}
+.u-fs-20{
+    font-size: to-rem(20)!important;
+}
+.u-fs-22{
+    font-size: to-rem(22);
+}
+.u-fs-24{
+    font-size: to-rem(24);
+}
+.u-fs-25-desktop{
+    @include media-querie('desktop'){
+        font-size: to-rem(25)!important;
+    }
+}
+.u-fs-16-desktop{
+    @include media-querie('desktop'){
+        font-size: to-rem(16);
+    }
+}

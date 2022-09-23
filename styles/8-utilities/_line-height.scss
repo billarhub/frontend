@@ -1,0 +1,13 @@
+.lHeight-22{
+    line-height: to-rem(22);
+}
+.lHeight-28-desktop{
+    @include media-querie('desktop'){
+        line-height: to-rem(28);
+    }
+}
+.u-lHeight-48-desktop{
+    @include media-querie('desktop'){
+        line-height: to-rem(48);
+    }
+}

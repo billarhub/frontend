@@ -1,0 +1,54 @@
+.grid-2-tablet{
+    @include media-querie('tablet'){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0;
+        width:100%;
+    }
+}
+.grid-2-desktop{
+    @include media-querie('desktop'){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0;
+        width:100%;
+    }
+}
+.grid-2-auto-desktop{
+    @include media-querie('desktop'){
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-column-gap: 0;
+        width:100%;
+    }
+}
+
+.grid-3-desktopXl{
+    @include media-querie('desktopXl'){
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0;
+        grid-row-gap: 0;
+    }
+}
+.grid-row-start-2-desktop{
+    @include media-querie('desktop'){
+        grid-row-start: 2!important;
+    }
+}
+.grid-column-gap-32-desktop{
+    @include media-querie('desktop'){
+        grid-column-gap:to-rem(32)!important;
+    }
+}
+.u-grid-column-gap-48-desktop{
+    @include media-querie('desktop'){
+        grid-column-gap:to-rem(48)!important;
+    }
+}
+.grid-column-gap-100-wide{
+    @include media-querie('wide'){
+        grid-column-gap:to-rem(100)!important;
+    }
+}

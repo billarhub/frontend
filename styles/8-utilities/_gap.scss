@@ -1,0 +1,16 @@
+.gap-16-desktop{
+    @include media-querie('desktop'){
+        gap:to-rem(16)!important;
+    }
+}
+
+.gap-55-wide{
+    @include media-querie('wide'){
+        gap:to-rem(55)!important;
+    }
+}
+.gap-155-wide{
+    @include media-querie('wide'){
+        gap:to-rem(155)!important;
+    }
+}

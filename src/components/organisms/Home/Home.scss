@@ -1,0 +1,239 @@
+.c-home{
+    &__container{
+        display: flex;
+        min-height: 60vh;
+    }
+
+    &__title-section{
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        h1{
+            font-size: 40px;
+        }
+        h2{
+            font-size: 34px;
+            font-weight: 500;
+            line-height: 36px;
+        }
+        @include media-querie('tablet') {
+            max-width: 600px;
+        }
+    }
+    &__image-section{
+        display: none;
+        @include media-querie('tablet') {
+            position: absolute;
+            right: 0;
+            display: block;
+        }
+    }
+    &__img{
+        border: 10px solid white;
+        border-radius: 64px;
+    }
+    &__cards{
+
+        width: 100%;
+        span{
+            border: 10px solid white !important;
+            border-radius: 62px;
+        }
+    }
+
+    &__services{
+        display: flex;
+        justify-content: center;
+        min-height: 50vh;
+    }
+}
+
+.c-second-section{
+        margin-top: 45px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: column;
+        @include media-querie('tablet') {
+            flex-direction: row;
+        }
+        &__a{
+            margin-right: 0;
+            max-width: 700px;
+            color: white !important;
+            text-align: center;
+            @include media-querie('tablet') {
+                margin-right: 25px;
+                text-align: justify;
+            }
+            &__image {
+                @include media-querie('tablet') {
+                width: 200px;
+                float: left;
+                margin: 30px 30px 30px 0;
+            }
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            &__text {
+                display: inline;
+                // text-align: justify;
+                h1{
+                    font-size: 50px;
+                    }
+                }
+                p{
+                    font-size: 22px;
+                    font-weight: 400;
+                    line-height: 28px;
+                }
+        }
+        &__b{
+            // width: 100%;
+            span{
+                border: 10px solid white !important;
+                border-radius: 62px;
+            }
+        }
+}
+
+
+.c-third-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &__title{
+        width: 100% ;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    &__container{
+        @include media-querie('tablet') {
+            flex-direction: row;
+        }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+    &__image{
+        img{
+            height: 190px;
+            max-height: 190px;
+        }
+        text-align: center;
+    }
+}
+
+.c-fourth-section{
+    display: flex;
+    margin-top: 35px;
+    align-items:center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    @include media-querie('tablet') {
+        flex-direction: row;
+    }
+    &__a{
+        max-width: 500px;
+        color: white !important;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        @include media-querie('tablet') {
+            flex-direction: row;
+        }
+        img{
+            width: 187px;
+            height: 187px;
+        }
+        @include media-querie('tablet') {
+            margin-right: 25px;
+            text-align: start;
+        }
+        &__image {
+            @include media-querie('tablet') {
+            width: 187px;
+            float: left;
+            margin: 30px 30px 30px 0;
+            }
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        &__text {
+            display: inline;
+            h1{
+                font-size: 40px;
+                }
+            }
+    }
+    &__b{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        img{
+            max-width: 160px;
+            width: 160px;
+            height: 160px;
+            border-radius: 25px;
+
+        }
+    }
+}
+
+
+.c-fifth-section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    h1{
+        font-size: 40px;
+        margin-top: 35px;
+        margin-bottom: 50px;
+    }
+    &__container{
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 90px;
+        flex-direction: column;
+        @include media-querie('tablet') {
+            flex-direction: row;
+        }
+
+    }
+    &__a{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        span{
+            max-width: 450px;
+            height: auto;
+            border-radius: 25px;
+        }
+    }
+
+    &__b{
+        max-width: 600px;
+        h3{
+            font-size: 28px;
+            line-height: 36px;
+        }
+        p{
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+}
