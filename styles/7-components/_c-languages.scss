@@ -1,0 +1,44 @@
+.c-languages{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left:to-rem(16);
+    @include media-querie('desktop'){
+        margin-left:to-rem(0);
+    }
+    &__label{
+        display: flex;
+        align-items: center;
+    }
+    &__text{
+        font-family: 'Poppins-regular';
+        font-size:to-rem(10);
+        margin:0 to-rem(2);
+        color:$primary;
+        padding:0;
+        margin:0;
+        line-height: 0;
+        @include media-querie('tablet'){
+            line-height: to-rem(10);
+         }
+        &:hover{
+            color:$secondary;
+        }
+    }
+    &__arrow{
+        height:to-rem(6)
+    }
+    &__flag{
+        width:to-rem(10);
+        height:to-rem(10);
+        margin: 0 to-rem(4) 0 0;
+        @include media-querie('tablet'){
+            width:to-rem(7);
+            height:to-rem(7);
+            margin: 0;
+        }
+    }
+    &__placeholder{
+        display:flex;
+    }
+}

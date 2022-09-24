@@ -1,0 +1,38 @@
+.w50-desktop{
+    @include media-querie('desktop'){
+        width:calc(100% / 2);
+    }
+}
+.w100-desktop{
+    @include media-querie('desktop'){
+        width:100%;
+    }
+}
+.mWidth-335{
+    max-width: to-rem(335);
+}
+.mWidth-400{
+    max-width: to-rem(400);
+}
+.u-mWidth-768{
+    max-width: to-rem(768);
+}
+.mWidth-300-desktop{
+    @include media-querie('desktop'){
+        max-width: to-rem(300);
+    }
+}
+.mWidth-320-desktop{
+    @include media-querie('desktop'){
+        max-width: to-rem(320);
+    }
+}
+.mWidth-420-wide{
+    @include media-querie('wide'){
+        max-width: to-rem(420);
+    }
+}
+.mWidth-440{
+    max-width: to-rem(440);
+}
+

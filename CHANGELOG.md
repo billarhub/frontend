@@ -7,5 +7,7 @@
 * X.0.0.0 = Un cambio radical en el proyecto
 
 
+# Versión 1.1.0.0
+* First landing page
 # Versión 1.0.0.0
 * Add maintenance mode.

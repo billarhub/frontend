@@ -1,0 +1,9 @@
+$z-index: (
+    level1 : 1,
+    level2 : 2,
+    level3 : 3
+  );
+
+  @mixin z-index($type){
+    z-index: map-get($z-index , $type);
+  }

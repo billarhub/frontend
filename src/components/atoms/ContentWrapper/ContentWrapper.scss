@@ -1,0 +1,36 @@
+.c-content-wrapper {
+    width: 100%;
+    height: auto;
+    background: $primary;
+    color: $text-primary;
+    display: block;
+    @include media-querie('desktop') {
+        display: flex;
+        justify-content: center;
+    }
+    &--bg-secondary{
+        background: $secondary;
+        color: $text-secondary;
+    }
+    &--bottom-right-rounded{
+        border-bottom-right-radius: 250px;
+    }
+    &__content {
+        @include media-querie('desktop') {
+            padding: 0px 120px 45px 120px;
+            max-width: 1400px;
+            width: 100%;
+            display: flex;
+            position: relative;
+        }
+        padding: 15px;
+        display: block;
+    }
+
+    &__right{
+
+    }
+    &__left{
+        
+    }
+}

@@ -1,0 +1,23 @@
+$breakpoints: (
+    mobile: 320px,
+    big-mobile: 425px,
+    phablet: 600px,
+    tablet: 768px,
+    desktop: 960px,
+    desktopXl: 1024px,
+    wide: 1400px,
+    hd: 1920px
+);
+
+@mixin media-querie($type) {
+    @media only screen and (min-width: map-get($breakpoints, $type)) {
+        @content;
+    }
+}
+
+
+/*Ejemplo de uso*/
+
+// @include media-querie('tablet') {
+//     font-size: $fz-m;
+// }
