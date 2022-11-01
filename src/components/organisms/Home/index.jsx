@@ -20,7 +20,12 @@ const HomeView = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          speed: 500,
+          dots: true,
+          autoplay: true,
+          speed: 2000,
+          autoplaySpeed: 5000,
+          cssEase: "linear"
         }
       },
     ]
