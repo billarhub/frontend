@@ -1,11 +1,30 @@
 import Image from "next/image";
 import React from "react";
 import Card from "../../atoms/Card";
-
+import Slider from "react-slick";
 import ContentWrapper from "../../atoms/ContentWrapper";
 import Logo from "../../atoms/Logo";
 
 const HomeView = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+    ]
+  };
   return (
     <div className='c-home'>
       <ContentWrapper secondary>
@@ -30,6 +49,14 @@ const HomeView = () => {
           </div>
         </div>
       </ContentWrapper>
+      <div >
+        <Slider {...settings}>
+          <Image src='/banner-public.png' width={1440}
+              height={380}/>
+               <Image src='/banner-public.png' width={1440}
+              height={380}/>
+        </Slider>
+      </div>
       <ContentWrapper>
         <div className='c-second-section'>
           <div className='c-second-section__a'>

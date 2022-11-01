@@ -1,6 +1,7 @@
 import Maintenance from "../src/components/screens/Maintenance";
 import MainLayout from "../src/layout/MainLayout/MainLayout";
-// import "../styles/globals.css";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import "../styles/index.scss";
 
 function MyApp({ Component, pageProps }) {

@@ -1,11 +1,12 @@
 .c-card{
-    margin-top: 20px;
-    width: 250px;
-    max-width: 280px;
-    border-radius: 8px;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    // min-height: 425px;
+    border-radius: 80px;
     background-color: $white;
-    min-height: 170px;
-    #children{
-        padding: 45px;
-    }
+    padding: 90px;
 }

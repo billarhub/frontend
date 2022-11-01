@@ -9,9 +9,22 @@
 // @import '../../../components/ButtonContainer/ButtonContainer.scss';
 // @import '../../../components/SectionCta/SectionCta.scss';
 // @import '../../../components/Image/Image.scss';
+
+//atoms
 @import '../../src/components/atoms/Header/Header.scss';
 @import '../../src/components/atoms/Footer/Footer.scss';
 @import '../../src/components/atoms/ContentWrapper/ContentWrapper.scss';
 @import '../../src/components/atoms/Card/Card.scss';
+@import '../../src/components/atoms/BackgroundWrapper/BackgroundWrapper.scss';
+@import '../../src/components/atoms/Inputs/CommonInput/CommonInput.scss';
+@import '../../src/components/atoms/Button/Button.scss';
+
+//layout
 @import '../../src/layout/MainLayout/MainLayout.scss';
+
+//molecules
+@import '../../src/components/molecules/Forms/LoginForm.scss';
+
+//organism
 @import '../../src/components/organisms/Home/Home.scss';
+@import '../../src/components/organisms/Login/Login.scss';

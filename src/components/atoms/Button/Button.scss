@@ -1,0 +1,45 @@
+.c-button {
+    cursor: pointer;
+    font-size: to-rem(15);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 9rem;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    background-color: $primary;
+    border-radius: 1.5rem;
+    color: $white;
+    white-space: nowrap;
+    &:hover{
+        background-color: $btn-hover;
+    }
+    @include media-querie('tablet') {
+        white-space: initial;
+        font-size: to-rem(12);
+    }
+    &--no-background {
+        background: transparent;
+        color: $secondary;
+        padding: 0;
+        min-width: 0;
+        font: normal normal 600 to-rem(18) / 0px Graphik;
+        img {
+            margin: 0 5px;
+        }
+        &:hover{
+            filter:brightness(0.7);
+            background: transparent;
+        }
+    }
+    &--inverted {
+        background-color: $white;
+        color: $secondary;
+        border: solid 1px $secondary;
+    }
+    &--disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
