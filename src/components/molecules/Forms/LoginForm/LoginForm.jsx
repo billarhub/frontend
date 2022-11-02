@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Field } from "formik";
-import CommonInput from "../../atoms/Inputs/CommonInput";
-import Button from "../../atoms/Button";
+import CommonInput from "../../../atoms/Inputs/CommonInput";
+import Button from "../../../atoms/Button";
 
 const LoginForm = () => {
   let initialValues = {

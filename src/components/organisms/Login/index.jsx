@@ -1,9 +1,6 @@
-import React from 'react'
-import { Formik, Form, Field } from 'formik'
-
 import BackgroundWrapper from '../../atoms/BackgroundWrapper'
 import Card from '../../atoms/Card'
-import LoginForm from '../../molecules/Forms/LoginForm'
+import LoginForm from '../../molecules/Forms/LoginForm/LoginForm'
 
 const LoginView = () => {
   return (

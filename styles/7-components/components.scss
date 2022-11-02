@@ -23,8 +23,10 @@
 @import '../../src/layout/MainLayout/MainLayout.scss';
 
 //molecules
-@import '../../src/components/molecules/Forms/LoginForm.scss';
+@import '../../src/components/molecules/Forms/LoginForm/LoginForm.scss';
+@import '../../src/components/molecules/Forms/RegisterForm/RegisterForm.scss';
 
 //organism
 @import '../../src/components/organisms/Home/Home.scss';
 @import '../../src/components/organisms/Login/Login.scss';
+@import '../../src/components/organisms/Register/Register.scss';
