@@ -1,9 +1,9 @@
 .c-register{
     width: 100%;
     &__content{
-        min-height: 84vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        height: calc(100vh - 136px);
     }
 }

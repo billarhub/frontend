@@ -1,6 +1,11 @@
 .c-main-layout{
-    
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer" 
+    ;
    &__main{
-        // padding: 0 120px 0 120px;
-    }
+        grid-area: content;
+   }
 }

@@ -1,12 +1,8 @@
 .c-card{
     display: flex;
-    // flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 600px;
-    width: 100%;
-    // min-height: 425px;
-    border-radius: 80px;
+    border-radius: 25px;
     background-color: $white;
-    padding: 90px;
+    padding: 80px;
 }

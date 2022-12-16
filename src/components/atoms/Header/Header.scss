@@ -1,34 +1,53 @@
 .c-header{
-    width: 100%;
-    top: 0;
+    grid-area: header;
+    // width: 100%;
+    // top: 0;
     position: sticky;
     background: #fff;
     min-height: 75px;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: $text-primary;
     @include z-index('level3');
 
     &__content{
         padding: 0 120px 0 120px;
+        flex: 1;
+        display: flex;
     }
 
     &__nav{
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translate(-50px, -50%);
-        @include media-querie('tablet'){
-            ul li{
-                display: inline-block;
-            }
-        }
-        ul li{
-            display: none;
-            list-style: none;
-            margin-right: 5px ;
-            height: 10px;
-            font-weight: 500;
-        }
+        // position: absolute;
+        // right: 0;
+        // top: 50%;
+        // transform: translate(-50px, -50%);
+        // @include media-querie('tablet'){
+        //     ul li{
+        //         display: inline-block;
+        //     }
+        // }
+        // ul li{
+        //     // display: none;
+        //     list-style: none;
+        //     margin-right: 5px ;
+        //     height: 10px;
+        //     font-weight: 500;
+        // }
+        display: flex;
+        align-items: center;
+        gap:20px;
+        margin-right: 20px;
+        
     }
+    &__login{
+        text-decoration: none;
+        color: black;
+        
+    }
+    &__login:hover{
+        color:$primary;
+    }
+    
+
 }

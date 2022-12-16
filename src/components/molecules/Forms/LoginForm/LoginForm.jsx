@@ -58,7 +58,7 @@ const LoginForm = () => {
               name='password'
               id='password'
             />
-            <Button>
+            <Button >
                 Ingresar
             </Button>
           </form>

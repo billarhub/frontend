@@ -1,6 +1,6 @@
 import React from "react";
 import { Field } from "formik";
-const CommonInput = ({error, helperText, onChange, onBlur, value, placeholder, label, name, id}) => {
+const CommonInput = ({error, helperText, onChange, onBlur, value, placeholder, label, name, id, type}) => {
   return (
     <Field
       className='c-common-input'
@@ -13,6 +13,7 @@ const CommonInput = ({error, helperText, onChange, onBlur, value, placeholder, l
       label={label}
       name={name}
       id={id}
+      type={type}
     />
   );
 };
