@@ -1,43 +1,28 @@
 .c-header{
     grid-area: header;
-    // width: 100%;
-    // top: 0;
     position: sticky;
     background: #fff;
     min-height: 75px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
     color: $text-primary;
     @include z-index('level3');
 
     &__content{
-        padding: 0 120px 0 120px;
-        flex: 1;
+        padding: 0 0 0 20px ;
+        // flex: 1;
         display: flex;
+        max-width: 220px;
     }
 
     &__nav{
-        // position: absolute;
-        // right: 0;
-        // top: 50%;
-        // transform: translate(-50px, -50%);
-        // @include media-querie('tablet'){
-        //     ul li{
-        //         display: inline-block;
-        //     }
-        // }
-        // ul li{
-        //     // display: none;
-        //     list-style: none;
-        //     margin-right: 5px ;
-        //     height: 10px;
-        //     font-weight: 500;
-        // }
         display: flex;
         align-items: center;
         gap:20px;
         margin-right: 20px;
+        max-width: 220px;
         
     }
     &__login{
@@ -48,6 +33,32 @@
     &__login:hover{
         color:$primary;
     }
+    &__option{
+        text-decoration: none;
+        color: black;   
+        padding: 10px 20px;
+             
+    }
+    &__options{
+        display: flex;
+        align-items: center;
+        
+        margin-right: 20px;
+        
+    }
     
+    &__option:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        height: 20px;
+        width: 1px;
+        margin:0px 20px;
+        background: #999
+      }
+      
+      &__option:last-child::after {
+        display: none
+      }
 
 }

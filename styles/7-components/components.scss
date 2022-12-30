@@ -18,15 +18,29 @@
 @import '../../src/components/atoms/BackgroundWrapper/BackgroundWrapper.scss';
 @import '../../src/components/atoms/Inputs/CommonInput/CommonInput.scss';
 @import '../../src/components/atoms/Button/Button.scss';
+@import '../../src/components/atoms/Inputs/TournamentInput/TournamentInput.scss';
+@import '../../src/components/atoms/Inputs/DatePickerInput/DatePickerInput.scss';
+@import '../../src/components/atoms/Inputs/SelectInput/SelectInput.scss';
+@import '../../src/components/atoms/Inputs/RadioInput/RadioInput.scss';
+@import '../../src/components/atoms/Inputs/InputFile/InputFile.scss';
+
+
+
+
 
 //layout
 @import '../../src/layout/MainLayout/MainLayout.scss';
+@import'../../src/layout/FormLayout/FormLayout.scss';
 
 //molecules
 @import '../../src/components/molecules/Forms/LoginForm/LoginForm.scss';
 @import '../../src/components/molecules/Forms/RegisterForm/RegisterForm.scss';
+@import '../../src/components/molecules/Forms/TournamentForm/StepOneForm.scss';
+@import '../../src/components/molecules/Forms/TournamentForm/StepTwoForm.scss';
+
 
 //organism
 @import '../../src/components/organisms/Home/Home.scss';
-@import '../../src/components/organisms/Login/Login.scss';
-@import '../../src/components/organisms/Register/Register.scss';
+
+// @import '../../src/components/organisms/Login/Login.scss';
+// @import '../../src/components/organisms/Register/Register.scss';

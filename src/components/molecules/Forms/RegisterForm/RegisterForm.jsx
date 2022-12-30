@@ -83,6 +83,7 @@ const RegisterForm = () => {
               label='Correo Electronico'
               name='email'
               id='email'
+              type='email'
             />
 
             <CommonInput
