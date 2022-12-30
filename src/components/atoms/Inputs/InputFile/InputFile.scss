@@ -3,6 +3,29 @@
     font-weight: bold;
     &__content{
         margin:10px 0px;
+        gap:20px;
+        display: flex;
+        flex-direction: column;
        
+    }
+    &__img{
+        max-width: 500px;
+        max-height: 500px;
+    }
+    &__box{
+        border-radius: 15px;
+        outline: none;
+    }
+    &__box::-webkit-file-upload-button{
+        color: white;
+        background: $primary;
+        padding: 15px;
+        border-radius: 15px;
+        border: none;
+        outline: none;
+    }
+    &__box::-webkit-file-upload-button:hover{
+        background-color: gray;
+        cursor: pointer;
     }
 }
