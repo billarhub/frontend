@@ -10,7 +10,7 @@ const Header = () => {
         <Logo />
       </div>
       <ul className="c-header__options">
-        <Link href="tournament" ><a className="c-header__option" >Torneos</a></Link>
+        <Link href="/tournament" ><a className="c-header__option" >Torneos</a></Link>
         <Link href="#" ><a className="c-header__option" >Jugador</a></Link>
         <Link href="#" ><a className="c-header__option" >Club</a></Link>
 
