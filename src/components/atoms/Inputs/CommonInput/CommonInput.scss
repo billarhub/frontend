@@ -7,4 +7,8 @@
     border: none;
     margin: 12px 0px 0px 0px;
     resize: none;
+    &__error{
+        color: red;
+        font-size: 13px;
+    }
 }

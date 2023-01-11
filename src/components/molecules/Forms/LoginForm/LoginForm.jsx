@@ -1,9 +1,12 @@
 import React from "react";
-import { Formik, Field } from "formik";
+import { Formik, Field, Form, ErrorMessage } from "formik";
 import CommonInput from "../../../atoms/Inputs/CommonInput";
 import Button from "../../../atoms/Button";
+import { useLogin } from "../../../../hooks/auth";
+import loginValidatorSchema from "../../../../utils/validators/LoginValidator";
 
 const LoginForm = () => {
+  const { mutateAsync } = useLogin();
   let initialValues = {
     email: "",
     password: "",
@@ -11,13 +14,13 @@ const LoginForm = () => {
   return (
     <Formik
       initialValues={initialValues}
+      validationSchema={loginValidatorSchema}
       enableReinitialize
       // validationSchema={}
-      onSubmit={async (
-        values,
-        { resetForm, setErrors, setStatus, setSubmitting }
-      ) => {
+      onSubmit={async (values) => {
         try {
+          console.log(values);
+          await mutateAsync({ email: values.email, password: values.password });
         } catch (err) {}
       }}
     >
@@ -32,36 +35,36 @@ const LoginForm = () => {
         values,
       }) => (
         <React.Fragment>
-          <form className="c-login-form" onSubmit={handleSubmit}>
+          <Form noValidate className="c-login-form" onSubmit={handleSubmit}>
             <h2>Inicia Sesión</h2>
+
             <CommonInput
-            //   error={Boolean(touched.email && errors.email)}
-              helperText={touched.email && errors.email}
-              onBlur={handleBlur}
+              error={Boolean(touched.email && errors.email)}
+              ErrorMessage={errors.email}
               onChange={handleChange}
               value={values.email}
-              placeholder='Correo Electronico'
-              label='Correo Electronico'
-              name='email'
-              id='email'
+              placeholder="Correo Electronico"
+              label="Correo Electronico"
+              name="email"
+              id="email"
             />
 
             <CommonInput
-            //   error={Boolean(touched.password && errors.password)}
-              helperText={touched.password && errors.password}
-              onBlur={handleBlur}
+              error={Boolean(touched.password && errors.password)}
+              ErrorMessage={errors.password}
               onChange={handleChange}
               value={values.password}
-              placeholder='Contraseña'
-              label='Contraseña'
-              type='password'
-              name='password'
-              id='password'
+              placeholder="Contraseña"
+              label="Contraseña"
+              type="password"
+              name="password"
+              id="password"
             />
-            <Button >
-                Ingresar
+
+            <Button disabled={isSubmitting} type="submit">
+              Ingresar
             </Button>
-          </form>
+          </Form>
         </React.Fragment>
       )}
     </Formik>
