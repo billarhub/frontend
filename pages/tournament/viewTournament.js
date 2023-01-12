@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
-import BackgroundWrapper from "../../src/components/atoms/BackgroundWrapper";
+// import BackgroundWrapper from "../../src/components/atoms/BackgroundWrapper";
 
-if (typeof window !== "undefined" && typeof window.navigator !== "undefined") {
-  import("@g-loot/react-tournament-brackets");
-}
+// if (typeof window !== "undefined" && typeof window.navigator !== "undefined") {
+//   import("@g-loot/react-tournament-brackets");
+// }
 
 const Match = dynamic(
   () => {
