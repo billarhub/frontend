@@ -1,9 +1,33 @@
-import {
-  Match,
-  SingleEliminationBracket,
-  SVGViewer,
-} from "@g-loot/react-tournament-brackets";
-import React, { useEffect } from "react";
+import dynamic from "next/dynamic";
+import React, { useEffect, useState } from "react";
+import BackgroundWrapper from "../../src/components/atoms/BackgroundWrapper";
+
+if (typeof window !== "undefined" && typeof window.navigator !== "undefined") {
+  import("@g-loot/react-tournament-brackets");
+}
+
+const Match = dynamic(
+  () => {
+    return import("@g-loot/react-tournament-brackets").then((mod) => mod.Match);
+  },
+  { ssr: false }
+);
+const SingleEliminationBracket = dynamic(
+  () => {
+    return import("@g-loot/react-tournament-brackets").then(
+      (mod) => mod.SingleEliminationBracket
+    );
+  },
+  { ssr: false }
+);
+const SVGViewer = dynamic(
+  () => {
+    return import("@g-loot/react-tournament-brackets").then(
+      (mod) => mod.SVGViewer
+    );
+  },
+  { ssr: false }
+);
 
 const ViewTournament = () => {
   const matches = [
@@ -125,14 +149,43 @@ const ViewTournament = () => {
       ],
     },
   ];
-
-
-
+  function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+    useEffect(() => {
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }, []); // Empty array ensures that effect is only run on mount
+    return windowSize;
+  }
+  const size = useWindowSize();
+  const finalWidth = Math.max(size.width - 50, 500);
+  const finalHeight = Math.max(size.height - 100, 500);
   return (
     <SingleEliminationBracket
       matches={matches}
       matchComponent={Match}
-    //   svgWrapper={function noRefCheck() {}}
+      svgWrapper={({ children, ...props }) => (
+        <SVGViewer width={finalWidth} height={finalHeight} {...props}>
+          {children}
+        </SVGViewer>
+      )}
     />
   );
 };
