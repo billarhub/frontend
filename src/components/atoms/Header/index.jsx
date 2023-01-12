@@ -34,7 +34,7 @@ const Header = () => {
         </>
       ) : (
         <nav className="c-header__nav">
-          <Link href="login">
+          <Link href="/login">
             <a className="c-header__login">Ingresar</a>
           </Link>
           <Link href="register">
