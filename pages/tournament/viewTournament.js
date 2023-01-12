@@ -7,13 +7,13 @@ import React, { useEffect, useState } from "react";
 // }
 
 const Match = dynamic(
-  () => {
+  async () => {
     return import("@g-loot/react-tournament-brackets").then((mod) => mod.Match);
   },
   { ssr: false }
 );
 const SingleEliminationBracket = dynamic(
-  () => {
+  async () => {
     return import("@g-loot/react-tournament-brackets").then(
       (mod) => mod.SingleEliminationBracket
     );
@@ -21,7 +21,7 @@ const SingleEliminationBracket = dynamic(
   { ssr: false }
 );
 const SVGViewer = dynamic(
-  () => {
+  async () => {
     return import("@g-loot/react-tournament-brackets").then(
       (mod) => mod.SVGViewer
     );
