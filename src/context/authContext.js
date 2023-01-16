@@ -72,10 +72,7 @@ export const AuthContextProvider = ({ children }) => {
   };
   const logout = async () => {
     dispatch({ type: "LOGOUT" });
-    removeSession()
-  
-
-   
+    removeSession()   
   };
 
   const context = { login, logout, ...state };
