@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useMutation } from "react-query";
 import AuthContext from "../../context/authContext";
 import { loginService } from "../../services/authServices";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 
 export const useLogin = () => {
     const {login} = useContext(AuthContext);
@@ -12,6 +12,7 @@ export const useLogin = () => {
        onSuccess: data => {
             login(data.data)
             data.status === 1 && router.push("/")  
+            
            
        },
     });

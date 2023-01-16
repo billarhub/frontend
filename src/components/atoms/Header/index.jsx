@@ -1,21 +1,29 @@
+import Cookies from "js-cookie";
 import Link from "next/link";
-import React, { useContext } from "react";
+import Router, { useRouter }  from "next/router";
+import React, { useContext} from "react";
 import AuthContext from "../../../context/authContext";
+
 import Button from "../Button";
 import Logo from "../Logo";
 
 const Header = () => {
-  const { authReady, logout , user} = useContext(AuthContext);
-  console.log(user);
+  const {  logout  } = useContext(AuthContext);
+  const router = useRouter()
+
   const handleLogout = () => {
-    logout();
+    logout();   
+    router.push('/')
   };
+
+  const cookie = Cookies.get('auth')
   return (
     <header className="c-header">
       <div className="c-header__content">
         <Logo />
       </div>
-      {authReady ? (
+      {cookie? (
+      
         <>
           <ul className="c-header__options">
             <Link href="/tournament">
@@ -28,9 +36,9 @@ const Header = () => {
               <a className="c-header__option">Club</a>
             </Link>
           </ul>
-          <nav className="c-header__nav">
+          <div className="c-header__nav">
             <Button onClick={handleLogout}>Cerrar Sesión</Button>
-          </nav>
+          </div>
         </>
       ) : (
         <nav className="c-header__nav">
