@@ -14,13 +14,13 @@ function MyApp({ Component, pageProps }) {
     return <Maintenance />;
   } else {
     return (
-      <QueryClientProvider client={queryClient}>
-        <AuthContextProvider>
+      <AuthContextProvider>
+        <QueryClientProvider client={queryClient}>
           <MainLayout>
             <Component {...pageProps} />
           </MainLayout>
-        </AuthContextProvider>
-      </QueryClientProvider>
+        </QueryClientProvider>
+      </AuthContextProvider>
     );
   }
 }

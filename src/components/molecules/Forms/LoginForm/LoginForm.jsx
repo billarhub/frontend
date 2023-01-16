@@ -19,7 +19,6 @@ const LoginForm = () => {
       // validationSchema={}
       onSubmit={async (values) => {
         try {
-          console.log(values);
           await mutateAsync({ email: values.email, password: values.password });
         } catch (err) {}
       }}

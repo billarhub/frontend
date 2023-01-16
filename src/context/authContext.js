@@ -1,9 +1,20 @@
-import { createContext, useReducer, useState } from "react";
+import Cookies from "js-cookie";
+import { Router } from "next/router";
+import { createContext, useReducer } from "react";
 
 const authState = {
   user: null,
   authReady: false,
+
 };
+
+const setSession = () => {
+  Cookies.set('auth', 1)
+};
+const removeSession = () => {
+  Cookies.remove('auth')
+};
+
 
 const authReducer = (state, action) => {
   switch (action.type) {
@@ -13,6 +24,7 @@ const authReducer = (state, action) => {
       return {
         ...state,
         authReady,
+        authToken,
         user,
       };
     }
@@ -55,9 +67,12 @@ export const AuthContextProvider = ({ children }) => {
 
   const login = async (data) => {
     dispatch({ type: "LOGIN", payload: { user: data } });
+    setSession()
+    
   };
   const logout = async () => {
     dispatch({ type: "LOGOUT" });
+    removeSession()   
   };
 
   const context = { login, logout, ...state };

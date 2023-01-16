@@ -1,23 +1,33 @@
 import React from "react";
-import { Formik, Field } from "formik";
+import { Formik, Field, Form } from "formik";
 import CommonInput from "../../../atoms/Inputs/CommonInput";
 import Button from "../../../atoms/Button";
+import registerValidatorSchema from "../../../../utils/validators/RegisterValidator";
+import { useRegister } from "../../../../hooks/auth";
 
 const RegisterForm = () => {
+  const { mutateAsync } = useRegister();
+
   let initialValues = {
+    name: "",
+    last_name: "",
+    identification_number: "",
+    phone: "",
     email: "",
     password: "",
+    repeat_password: ""
   };
+
   return (
     <Formik
       initialValues={initialValues}
       enableReinitialize
-      // validationSchema={}
-      onSubmit={async (
-        values,
-        { resetForm, setErrors, setStatus, setSubmitting }
-      ) => {
+      validationSchema={registerValidatorSchema}
+      onSubmit={async (values) => {
         try {
+          console.log(values);
+          await mutateAsync(values);
+          
         } catch (err) {}
       }}
     >
@@ -26,17 +36,15 @@ const RegisterForm = () => {
         handleBlur,
         handleChange,
         handleSubmit,
-        isSubmitting,
         touched,
-        setFieldValue,
         values,
       }) => (
         <React.Fragment>
-          <form className="c-register-form" onSubmit={handleSubmit}>
+          <Form  noValidate className="c-register-form" onSubmit={handleSubmit}>
             <h2>INGRESA TUS DATOS</h2>
             <CommonInput
-              helperText={touched.name && errors.name}
-              onBlur={handleBlur}
+              error={Boolean(touched.name && errors.name)}
+              ErrorMessage={errors.name}
               onChange={handleChange}
               value={values.name}
               placeholder='Nombres'
@@ -45,7 +53,8 @@ const RegisterForm = () => {
               id='name'
             />
             <CommonInput
-              helperText={touched.last_name && errors.last_name}
+              error={Boolean(touched.last_name && errors.last_name)}
+              ErrorMessage={errors.last_name}         
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.last_name}
@@ -55,7 +64,8 @@ const RegisterForm = () => {
               id='last_name'
             />
             <CommonInput
-              helperText={touched.identification_number && errors.identification_number}
+              error={Boolean(touched.identification_number && errors.identification_number)}
+              ErrorMessage={errors.identification_number}
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.identification_number}
@@ -65,7 +75,8 @@ const RegisterForm = () => {
               id='identification_number'
             />
             <CommonInput
-              helperText={touched.phone && errors.phone}
+              error={Boolean(touched.phone && errors.phone)}
+              ErrorMessage={errors.phone}
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.phone}
@@ -75,7 +86,8 @@ const RegisterForm = () => {
               id='phone'
             />
             <CommonInput
-              helperText={touched.email && errors.email}
+              error={Boolean(touched.email && errors.email)}
+              ErrorMessage={errors.email}
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.email}
@@ -87,7 +99,8 @@ const RegisterForm = () => {
             />
 
             <CommonInput
-              helperText={touched.password && errors.password}
+              error={Boolean(touched.password && errors.password)}
+              ErrorMessage={errors.password}
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.password}
@@ -98,7 +111,8 @@ const RegisterForm = () => {
               id='password'
             />
             <CommonInput
-              helperText={touched.repeat_password && errors.repeat_password}
+              error={Boolean(touched.repeat_password && errors.repeat_password)}
+              ErrorMessage={errors.repeat_password}
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.repeat_password}
@@ -111,7 +125,7 @@ const RegisterForm = () => {
             <Button>
                 Crear Cuenta
             </Button>
-          </form>
+          </Form>
         </React.Fragment>
       )}
     </Formik>

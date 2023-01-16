@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
+import BackgroundWrapper from "../../src/components/atoms/BackgroundWrapper";
 // import BackgroundWrapper from "../../src/components/atoms/BackgroundWrapper";
 
 // if (typeof window !== "undefined" && typeof window.navigator !== "undefined") {
@@ -174,19 +175,31 @@ const ViewTournament = () => {
     }, []); // Empty array ensures that effect is only run on mount
     return windowSize;
   }
+
   const size = useWindowSize();
   const finalWidth = Math.max(size.width - 50, 500);
-  const finalHeight = Math.max(size.height - 100, 500);
+  const finalHeight = Math.max(size.height - 136 , 500);
   return (
-    <SingleEliminationBracket
-      matches={matches}
-      matchComponent={Match}
-      svgWrapper={({ children, ...props }) => (
-        <SVGViewer width={finalWidth} height={finalHeight} {...props}>
-          {children}
-        </SVGViewer>
-      )}
-    />
+    <BackgroundWrapper>
+      <div style={{ minHeight: "calc(100vh - 136px)", display: "flex", justifyContent:"center", alignItems:"center", gap:"10px"}}>
+
+      <SingleEliminationBracket
+        matches={matches}
+        matchComponent={Match}
+        svgWrapper={({ children, ...props }) => (
+          <SVGViewer
+          width={finalWidth}
+          height={finalHeight}
+          {...props}
+          background={"#000000"}
+          SVGBackground={"#000000"}
+          >
+            {children}
+          </SVGViewer>
+        )}
+        />
+        </div>
+    </BackgroundWrapper>
   );
 };
 
